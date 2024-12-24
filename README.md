@@ -1,1 +1,1 @@
-# Next SNS ver2
+# Nextjs15 SNS

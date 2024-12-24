@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  name      String?
+  bio       String?
+  image     String?
+  posts     Post[]
+  likes     Like[]
+  replies   Reply[]
+  followers Follow[]  @relation("follower")
+  following Follow[]  @relation("following")
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  likes     Like[]
+  replies   Reply[]
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    String
+
+  @@unique([userId, postId])
+}
+
+model Reply {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    String
+}
+
+model Follow {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  follower    User     @relation("follower", fields: [followerId], references: [id])
+  followerId  String
+  following   User     @relation("following", fields: [followingId], references: [id])
+  followingId String
+
+  @@unique([followerId, followingId])
+}

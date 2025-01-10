@@ -285,7 +285,7 @@ export function Component() {
   );
 }
 
-function BellIcon(props) {
+function BellIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -305,7 +305,7 @@ function BellIcon(props) {
   );
 }
 
-function BookmarkIcon(props) {
+function BookmarkIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -324,7 +324,7 @@ function BookmarkIcon(props) {
   );
 }
 
-function ClockIcon(props) {
+function ClockIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -344,7 +344,7 @@ function ClockIcon(props) {
   );
 }
 
-function CompassIcon(props) {
+function CompassIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -364,7 +364,7 @@ function CompassIcon(props) {
   );
 }
 
-function HeartIcon(props) {
+function HeartIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -383,7 +383,7 @@ function HeartIcon(props) {
   );
 }
 
-function HomeIcon(props) {
+function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -403,7 +403,7 @@ function HomeIcon(props) {
   );
 }
 
-function LogInIcon(props) {
+function LogInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -424,7 +424,7 @@ function LogInIcon(props) {
   );
 }
 
-function MailIcon(props) {
+function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -444,7 +444,7 @@ function MailIcon(props) {
   );
 }
 
-function MessageCircleIcon(props) {
+function MessageCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -463,7 +463,7 @@ function MessageCircleIcon(props) {
   );
 }
 
-function SearchIcon(props) {
+function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -483,7 +483,7 @@ function SearchIcon(props) {
   );
 }
 
-function SendIcon(props) {
+function SendIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -503,7 +503,7 @@ function SendIcon(props) {
   );
 }
 
-function SettingsIcon(props) {
+function SettingsIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -523,7 +523,7 @@ function SettingsIcon(props) {
   );
 }
 
-function Share2Icon(props) {
+function Share2Icon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -546,7 +546,7 @@ function Share2Icon(props) {
   );
 }
 
-function UserIcon(props) {
+function UserIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

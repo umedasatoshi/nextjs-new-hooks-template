@@ -1,0 +1,55 @@
+@startuml super-modern-sns-db
+
+entity User {
+  *id : String [PK]
+  --
+  createdAt : DateTime
+  updatedAt : DateTime
+  name : String
+  bio : String
+  image : String
+}
+
+entity Post {
+  *id : String [PK]
+  --
+  createdAt : DateTime
+  updatedAt : DateTime
+  content : String
+  authorId : String [FK]
+}
+
+entity Like {
+  *id : String [PK]
+  --
+  createdAt : DateTime
+  userId : String [FK]
+  postId : String [FK]
+}
+
+entity Reply {
+  *id : String [PK]
+  --
+  createdAt : DateTime
+  updatedAt : DateTime
+  content : String
+  authorId : String [FK]
+  postId : String [FK]
+}
+
+entity Follow {
+  *id : String [PK]
+  --
+  createdAt : DateTime
+  followerId : String [FK]
+  followingId : String [FK]
+}
+
+User ||--o{ Post
+User ||--o{ Like
+User ||--o{ Reply
+User ||--o{ Follow
+Post ||--o{ Like
+Post ||--o{ Reply
+
+@enduml
